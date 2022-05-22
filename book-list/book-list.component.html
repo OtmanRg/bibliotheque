@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Nos Livres</h2>
+        <div class="list-group">
+            <button class="list-group-item" 
+                    *ngFor="let b of books; let i = index" 
+                    (click)="onViewBook(i)">
+                    <h3 class="list-group-item-heading">
+                        {{b.titre}}
+                        <button class="btn btn-default pull-right" (click)="onDeleteBook(b)">
+                            <span class="glyphicon glyphicon-minus"></span>
+                        </button>
+                    </h3>
+                    <p>{{b.auteur}}</p>
+            </button>
+        </div>
+        <button *ngIf="priv===3">access admin</button>
+        <button class="btn btn-primary" (click)="onNewBook()">Ajouter un livre</button>
+
+    </div>
+</div>
